@@ -112,7 +112,6 @@ def create_page_content(result_dict):
         if isinstance(value, dict):
             for index, (subkey, subvalue) in enumerate(value.items()):
                 if index % 2 == 0:
-                    # Add a new subheader block
                     data = {
                         "object": "block",
                         "type": "heading_3",
@@ -121,7 +120,6 @@ def create_page_content(result_dict):
                         }
                     }
                 else:
-                    # Add a new paragraph block for the subitem's content
                     data = {
                         "object": "block",
                         "type": "paragraph",
@@ -131,7 +129,6 @@ def create_page_content(result_dict):
                     }
                 children.append(data)
         else:
-            # Add a new paragraph block for the item's content
             data = {
                 "object": "block",
                 "type": "paragraph",
@@ -143,11 +140,10 @@ def create_page_content(result_dict):
     return children,title
 
 
-# Headers for the HTTP request
+# Headers
 headers = {
     "Authorization": f"Bearer {token}",
-    "Notion-Version": "2022-06-28",  # Update this to the current version
-    "Content-Type": "application/json"
+    "Notion-Version": "2022-06-28", 
 }
 children_content,title = create_page_content(result_dict)
 #(children_content,title)
