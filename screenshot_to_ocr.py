@@ -6,7 +6,7 @@ from tkinter import messagebox
 
 def move_screenshots():
     # デスクトップのパスを指定
-    desktop_path = "/Users/bocmitsuhashi/Desktop" # あなたのユーザーネームを入力
+    desktop_path = "/Users/bocmitsuhashi/Desktop" 
 
     # 現在の時間を取得し、フォルダ名に使えるように文字列に変換
     now = datetime.now()
